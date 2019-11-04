@@ -75,7 +75,7 @@ key50 = new Btn(77, lang, 'button', 'M', 'Ь');
 key51 = new Btn(188, lang, 'button', ',', 'Б');
 key52 = new Btn(190, lang, 'button', '.', 'Ю');
 key53 = new Btn(191, lang, 'button', '/', '.');
-key54 = new Btn(38, lang, 'button', '<img src="./images/up.png" alt="up"', '<img src="./images/up.png" alt="up"');
+key54 = new Btn(38, lang, 'button', '<img src="./images/up.png" alt="up"', '<img src="./pic/up-arrow.jpg" alt="up"');
 key55 = new Btn(16, lang, 'button shift2', 'Shift', 'Shift');
 
 key56 = new Btn(17, lang, 'button', 'Ctrl', 'Ctrl');
@@ -83,11 +83,11 @@ key57 = new Btn(18, lang, 'button', 'Alt', 'Alt');
 key58 = new Btn(32, lang, 'button space', 'Space', 'Space');
 key59 = new Btn(18, lang, 'button', 'Alt', 'Alt');
 key60 = new Btn(17, lang, 'button', 'Ctrl', 'Ctrl');
-key61 = new Btn(37, lang, 'button', '<img src="./images/left.png" alt="left">', '<img src="./images/left.png" alt="left">');
-key62 = new Btn(40, lang, 'button', '<img src="./images/down.png" alt="down">', '<img src="./images/down.png" alt="down">');
-key63 = new Btn(39, lang, 'button', '<img src="./images/right.png" alt="right">', '<img src="./images/right.png" alt="right">');
+key61 = new Btn(37, lang, 'button', '<img src="./images/left.png" alt="left">', '<img src="./pic/left-arrow.png" alt="left">');
+key62 = new Btn(40, lang, 'button', '<img src="./images/down.png" alt="down">', '<img src="./pic/d-arrow.png" alt="down">');
+key63 = new Btn(39, lang, 'button', '<img src="./images/right.png" alt="right">', '<img src="./pic/right-arrow.jpg" alt="right">');
 
-const arrkeyboard = [
+const arrKeyBoard = [
     [key1, key2, key3, key4, key5, key6, key7, key8, key9, key10, key11, key12, key13, key14],
     [key15, key16, key17, key18, key19, key20, key21, key22, key23, key24, key25, key26, key27, key28, key29],
     [key30, key31, key32, key33, key34, key35, key36, key37, key38, key39, key40, key41, key42],
@@ -95,13 +95,26 @@ const arrkeyboard = [
     [key56, key57, key58, key59, key60, key61, key62, key63]
 ]
 
-for (let i = 0; i < arrkeyboard.length; i++) {
+for (let i = 0; i < arrKeyBoard.length; i++) {
 
     document.querySelector('.keyboard').insertAdjacentHTML('beforeend', `<div class="row${i}"></div>`);
-    for (let j = 0; j < arrkeyboard[i].length; j++) {
-        document.querySelector(`.row${i}`).insertAdjacentHTML('beforeend', `<div class="${arrkeyboard[i][j].cssClass}">${arrkeyboard[i][j].textBtn}</div>`);
+    for (let j = 0; j < arrKeyBoard[i].length; j++) {
+        document.querySelector(`.row${i}`).insertAdjacentHTML('beforeend', `<div keyCode="${arrKeyBoard[i][j].keyCode}" class="${arrKeyBoard[i][j].cssClass}">${arrKeyBoard[i][j].textBtn}</div>`);
     }
 }
 
+pressingAButtonOnAPhysicalKeyboard();
 
 
+
+function pressingAButtonOnAPhysicalKeyboard() {
+
+    document.body.addEventListener('keydown', e => {
+        let btn = document.querySelector('[keycode="' + e.keyCode + '"]');
+        btn.classList.add('active');
+    });
+    document.body.addEventListener('keyup', e => {
+        let btn = document.querySelector('[keycode="' + e.keyCode + '"]');
+        btn.classList.remove('active');
+    });
+};

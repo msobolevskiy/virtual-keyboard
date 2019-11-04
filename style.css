@@ -67,3 +67,6 @@ body {
 .space {
     width: 320px;
 }
+.active {
+    background: hsl(0, 3%, 40%);
+}
