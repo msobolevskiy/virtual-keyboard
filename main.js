@@ -144,6 +144,7 @@ function changedLanguage(func, ...codes) {
         return;
       }
     }
+
     pressed.clear();
     func();
   });
@@ -154,21 +155,25 @@ function changedLanguage(func, ...codes) {
 }
 
 function keySpace(key, text) {
-  if (key.classList.contains('active')) text.value = (`${`${text.value} `}`);
+  const textArea = text;
+  if (key.classList.contains('active')) textArea.value = (`${`${textArea.value} `}`);
 }
 
 function keyBackSpace(key, text) {
-  if (key.classList.contains('active')) text.value = text.value.substring(0, text.value.length - 1);
+  const textArea = text;
+  if (key.classList.contains('active')) textArea.value = textArea.value.substring(0, textArea.value.length - 1);
 }
 
 function keyEnter(key, text) {
-  if (key.classList.contains('active')) text.value = (`${`${text.value}\n`}`);
+  const textArea = text;
+  if (key.classList.contains('active')) textArea.value = (`${`${textArea.value}\n`}`);
 }
 
 function keyTab(key, text) {
+  const textArea = text;
   if (key.classList.contains('active')) {
     key.preventDefault();
-    text.value = (`${`${text.value}        `}`);
+    textArea.value = (`${`${textArea.value}        `}`);
   }
 }
 
