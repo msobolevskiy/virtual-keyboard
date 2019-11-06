@@ -144,7 +144,7 @@ function changedLanguage(func, ...codes) {
         return;
       }
     }
-
+    
     pressed.clear();
     func();
   });
@@ -218,12 +218,6 @@ function virtualButton() {
   });
 }
 
-// function preventDef(event) {
-//   event.preventDefault();
-// }
-// function stopDefAction(evt) {
-//     evt.preventDefault();
-// }
 renderKeyboard(lang);
 elementGeneration(arrKeyBoard);
 pressingAButtonOnAPhysicalKeyboard();
@@ -232,7 +226,7 @@ virtualButton();
 
 changedLanguage(
   () => {
-    // lang === 'ru' ? lang = 'eng' : lang = 'ru';
+    
     if (lang === 'ru') {
       lang = 'eng';
     } else lang = 'ru';
