@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.textarea-wrapper {
+    margin: 30px 0;
+}
+.textarea{
+    display: flex;
+    width: 100%;
+    border: 2px solid hsl(60, 9%, 69%);
+    outline: 0;
+}
+.textarea:focus{
+    border: 2px solid hsl(60, 9%, 69%);
+    outline: 0;
+}
+
+
+.keyboard{
+    display: flex;
+    flex-direction: column;
+}
+.row0, .row1, .row2, .row3, .row4  {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 37px;
+    height: 37px;
+    padding: 5px;
+    margin: 1px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 27px;
+}
+.button img {
+    width: 10px;
+    height: 10px;
+}
+.button sup {
+    font-size: 10px;
+    margin-left: 5px;
+}
+.backspace {
+    width: 85px;
+}
+.tab {
+    width: 41px;
+}
+.caps {
+    width: 100px;
+}
+.enter {
+    width: 60px;
+}
+.shift {
+    width: 117px;
+}
+.shift2 {
+    width: 43px;
+}
+.space {
+    width: 320px;
+}
+.active {
+    background-color: #5f5b5b;
+    box-shadow: inset 0px 0px 9px 4px rgba(10, 10, 10, 0.5);
+}
